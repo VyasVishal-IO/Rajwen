@@ -1130,7 +1130,7 @@
 
 import type React from "react"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { doc, getDoc, updateDoc, collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "@/lib/firebase"
@@ -1489,11 +1489,13 @@ export default function ProfilePage() {
                   <span>{format(anniversary, "MMM d")}</span>
                 </Badge>
               )}
+
+              {/* <Suspense>
               <Link href="/notifications">
                 <Badge
                   variant="outline"
                   className="flex items-center gap-1 py-1 bg-green-50 cursor-pointer hover:bg-green-100"
-                >
+                  >
                   <Bell className="h-3 w-3 text-green-600" />
                   <span>Notifications</span>
                   {unreadCount > 0 && (
@@ -1503,6 +1505,7 @@ export default function ProfilePage() {
                   )}
                 </Badge>
               </Link>
+                  </Suspense> */}
             </div>
           </div>
         </div>
