@@ -1313,14 +1313,27 @@ export default function ProfilePage() {
         const notificationsQuery = query(notificationsCollection, where("recipients", "in", ["all", user.uid]))
 
         const notificationsSnapshot = await getDocs(notificationsQuery)
-        const notificationsList = notificationsSnapshot.docs.map((doc) => {
-          const data = doc.data()
+        type Notification = {
+          id: string;
+          title: string;
+          message: string;
+          sentBy: string;
+          createdAt: Date;
+          read: boolean;
+        };
+        
+        const notificationsList: Notification[] = notificationsSnapshot.docs.map((doc) => {
+          const data = doc.data() as Notification; // Ensure data matches Notification type
           return {
             id: doc.id,
-            ...data,
+            title: data.title,       // Ensure all required properties exist
+            message: data.message,
+            sentBy: data.sentBy,
+            createdAt: data.createdAt, // Ensure correct type
             read: userReadNotifications.includes(doc.id),
-          }
-        }) as Notification[]
+          };
+        });
+        
 
         setNotifications(notificationsList)
         setUnreadCount(notificationsList.filter((n) => !n.read).length)
