@@ -839,7 +839,7 @@ export default function BucketListPage() {
                         >
                           <div className="relative h-20 w-20 rounded-md overflow-hidden flex-shrink-0">
                             <Image
-                              src={item.imageUrl || "/placeholder.svg?height=80&width=80"}
+                              src={item.imageUrl || "/placeholder80.svg?height=80&width="}
                               alt={item.name}
                               fill
                               className="object-cover"
@@ -1146,7 +1146,7 @@ export default function BucketListPage() {
           <div className="flex justify-center py-4">
             <div className="relative h-64 w-64">
               <Image
-                src="/placeholder.svg?height=256&width=256"
+                src="/qr.jpg"
                 alt="Payment QR Code"
                 fill
                 className="object-contain"
