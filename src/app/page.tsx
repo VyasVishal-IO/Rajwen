@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Clock, MapPin, Phone, Mail, Star, ArrowRight, Instagram } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Toaster, toast } from "react-hot-toast";
-import axios from "axios";
+import { Toaster } from "react-hot-toast";
 import { ContactForm } from "@/components/contact-form";
 
 // Animation variants
@@ -26,34 +25,6 @@ const staggerContainer = {
 };
 
 export default function Home() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      await axios.post('/api/contact', formData);
-      toast.success('Message sent successfully!');
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
-      toast.error('Failed to send message. Please try again.');
-      console.error('Error sending message:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -334,12 +305,12 @@ export default function Home() {
                 text: "Perfect place for family dinners! The variety of dishes and the quality of food is exceptional. The staff is friendly and the ambiance is warm and welcoming.",
                 name: "Vyas Vishal",
                 role: "Family Customer"
-              }
+              },
               {
                 text: "As a food enthusiast, I can confidently say that Rajwen serves the most authentic Indian vegetarian food in Gandhinagar. Their Paneer Tikka Masala is to die for!",
                 name: "Ayushi Thakkar",
                 role: "Food Blogger"
-              },
+              }
             ].map((testimonial, index) => (
               <motion.div 
                 key={index}
@@ -401,7 +372,7 @@ export default function Home() {
               width="100%"
               height="100%"
               style={{ border: 0 }}
-              allowFullScreen=""
+              allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
