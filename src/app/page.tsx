@@ -201,7 +201,7 @@ export default function Home() {
               className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:shadow-lg hover:-translate-y-1"
               variants={fadeInUp}
             >
-              <img src="/api/placeholder/400/320" alt="Special Thali" className="w-full h-48 object-cover" />
+              <img src="Logo.png" alt="Special Thali" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <div className="flex justify-between items-center mb-2">
                   <h3 className="text-xl font-bold text-gray-800">Rajwen Special Thali</h3>

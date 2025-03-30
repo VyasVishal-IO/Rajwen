@@ -230,7 +230,7 @@ export default function Navbar() {
                           </Link>
                         </SheetClose>
                         <SheetClose asChild>
-                          <Link 
+                          {/* <Link 
                             href="/notifications" 
                             className="flex items-center text-base font-medium hover:text-primary transition-all rounded-lg p-3 hover:bg-primary/5"
                           >
@@ -244,7 +244,7 @@ export default function Navbar() {
                             {hasNewNotifications && (
                               <Badge className="ml-auto bg-red-500">New</Badge>
                             )}
-                          </Link>
+                          </Link> */}
                         </SheetClose>
                         <SheetClose asChild>
                           <Link 
@@ -369,7 +369,7 @@ export default function Navbar() {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Link href="/notifications">
+                      {/* <Link href="/notifications">
                         <Button 
                           variant="ghost" 
                           size="icon" 
@@ -381,7 +381,7 @@ export default function Navbar() {
                             <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500" />
                           )}
                         </Button>
-                      </Link>
+                      </Link> */}
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>Notifications</p>
@@ -475,7 +475,7 @@ export default function Navbar() {
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild className="rounded-lg py-2 transition-colors">
-                        <Link href="/notifications" className="flex items-center cursor-pointer">
+                        {/* <Link href="/notifications" className="flex items-center cursor-pointer">
                           <div className="relative mr-2">
                             <Bell className="h-4 w-4" />
                             {hasNewNotifications && (
@@ -486,7 +486,7 @@ export default function Navbar() {
                           {hasNewNotifications && (
                             <Badge variant="destructive" className="ml-auto scale-75">New</Badge>
                           )}
-                        </Link>
+                        </Link> */}
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild className="rounded-lg py-2 transition-colors">
                         <Link href="/bucketlist" className="flex items-center cursor-pointer">

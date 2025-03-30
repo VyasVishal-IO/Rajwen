@@ -143,13 +143,13 @@ export default function AdminDashboard() {
             </Button>
 
             <Button asChild variant="outline" className="h-auto py-4 justify-start">
-              <Link href="/admin/notifications" className="flex flex-col items-start">
+              {/* <Link href="/admin/notifications" className="flex flex-col items-start">
                 <span className="flex items-center mb-1">
                   <AlertCircle className="mr-2 h-5 w-5" />
                   Send Notifications
                 </span>
                 <span className="text-xs text-muted-foreground">Send messages to users</span>
-              </Link>
+              </Link> */}
             </Button>
           </CardContent>
         </Card>

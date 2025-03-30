@@ -1,32 +1,36 @@
-import type React from "react"
-import { Inter } from "next/font/google"
-import { Toaster } from "react-hot-toast"
-import { AuthProvider } from "@/components/auth-provider"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
-import "./globals.css"
-
-const inter = Inter({ subsets: ["latin"] })
+import type React from "react";
+import { Mulish } from "next/font/google";
+import { Toaster } from "react-hot-toast";
+import { AuthProvider } from "@/components/auth-provider";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import "./globals.css";
 
 export const metadata = {
   title: "Rajwen Indian Veg Food Restaurant",
   description: "Authentic Indian Vegetarian Cuisine",
-}
+};
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-}
+};
+
+const mulish = Mulish({
+  subsets: ["latin"],
+  weight: ["200", "400", "600", "800", "1000"],
+  variable: "--font-mulish",
+});
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={mulish.className}>
         <AuthProvider>
           <div className="flex min-h-screen flex-col">
             <Navbar />
@@ -39,5 +43,5 @@ export default function RootLayout({
         </AuthProvider>
       </body>
     </html>
-  )
+  );
 }
